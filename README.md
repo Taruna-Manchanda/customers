@@ -1,10 +1,10 @@
 ## Customers Service 
 
-#### It gives an interface to manage customers data in Firestore thru API's 
+It gives an interface to manage customers data in Firestore thru API's 
 
-#### It is hosted at - https://taruna-manchanda.appspot.com/
+It is hosted at - https://taruna-manchanda.appspot.com/
 
-#### It offers below features :
+It offers below features :
  
 :arrow_right: Retrieve an existing customer using customer id 
 
