@@ -8,7 +8,7 @@ It offers below features :
  
 :arrow_right: Retrieve an existing customer using customer id 
 
- [https://taruna-manchanda.appspot.com/customers/c5843090-d3ef-11e9-b548-f15247596573/]
+ GET https://taruna-manchanda.appspot.com/customers/c5843090-d3ef-11e9-b548-f15247596573/
  
        sample response payload
        {
@@ -23,7 +23,7 @@ It offers below features :
 
 :arrow_right: Retrieve all customers
 
-[https://taruna-manchanda.appspot.com/customers/]
+GET https://taruna-manchanda.appspot.com/customers/
 
     sample response payload
   
@@ -49,7 +49,7 @@ It offers below features :
 
 :arrow_right: Retrieve customers by gender
 
-[https://taruna-manchanda.appspot.com/customers?gender=female]
+GET https://taruna-manchanda.appspot.com/customers?gender=female
 
     sample response payload
     
@@ -75,7 +75,7 @@ It offers below features :
 
 :arrow_right: Create a new customer
 
-[https://taruna-manchanda.appspot.com/customers/]
+POST https://taruna-manchanda.appspot.com/customers/
 
     sample request payload 
       {
@@ -91,7 +91,7 @@ It offers below features :
 
 :arrow_right: Update an existing customer using customer id
 
-[https://taruna-manchanda.appspot.com/customers/c5843090-d3ef-11e9-b548-f15247596573]
+PUT https://taruna-manchanda.appspot.com/customers/c5843090-d3ef-11e9-b548-f15247596573
 
     sample request payload
       { "lastName": "Pasir",
