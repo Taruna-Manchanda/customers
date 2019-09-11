@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "d66e1146-62e3-4e5b-b407-89dea2d1d4f7",
+		"name": "customers_postmancollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://taruna-manchanda.appspot.com/customers/",
+				"description": "get all customers"
+			},
+			"response": []
+		},
+		{
+			"name": "get all customers female",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://taruna-manchanda.appspot.com/customers?gender=female",
+					"protocol": "https",
+					"host": [
+						"taruna-manchanda",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"customers"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "female"
+						}
+					]
+				},
+				"description": "get customers by gender"
+			},
+			"response": []
+		},
+		{
+			"name": "get customer by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://taruna-manchanda.appspot.com/customers/c5843090-d3ef-11e9-b548-f15247596573/",
+				"description": "get customer by id"
+			},
+			"response": []
+		},
+		{
+			"name": "update customer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lastName\": \"Rustam\",\n    \"mobile\": 7674898356\n}"
+				},
+				"url": "https://taruna-manchanda.appspot.com/customers/c5843090-d3ef-11e9-b548-f15247596573",
+				"description": "update a field using customer id"
+			},
+			"response": []
+		},
+		{
+			"name": "create customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sally.j@gmail.com\",\n    \"mobile\": 76744533567,\n    \"lastName\": \"John\",\n    \"gender\": \"female\",\n    \"firstName\": \"Sally\",\n    \"dob\": \"02-02-1176\"\n}"
+				},
+				"url": "https://taruna-manchanda.appspot.com/customers/",
+				"description": "create customer record"
+			},
+			"response": []
+		}
+	]
+}
