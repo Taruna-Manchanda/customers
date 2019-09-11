@@ -24,6 +24,8 @@ app.post('/customers', function (req, res) {
     db.collection('customers').doc(id).set(customer).then(() => {
         console.log("Document successfully written!");
         res.status(201).send(id).end();
+    }).catch(function () {
+              
     });
     
 });
@@ -63,6 +65,8 @@ app.get('/customers', function (req, res) {
         console.log(docs.length);
         console.log(docs);
         res.json(docs);
+    }).catch(function () {
+               
     });
 });
 
@@ -77,6 +81,8 @@ app.get('/customers/:id', function (req, res) {
             console.log("No such document!");
             res.status(404).end();
         }
+    }).catch(function () {
+           
     });
 });
 
