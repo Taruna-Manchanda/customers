@@ -1,0 +1,4 @@
+runtime: nodejs8
+env: standard
+instance_class: B1
+service: default
