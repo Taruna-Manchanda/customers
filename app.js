@@ -29,7 +29,7 @@ app.post('/customers', function (req, res) {
 
     db.collection('customers').doc(id).set(customer).then(() => {
         console.log("Document successfully written!");
-        res.status(201).send(id).end();
+        res.status(201).send({id : id}).end();
     }).catch(function (err) {
         console.log(err);
         res.status(500).end();              
@@ -41,7 +41,7 @@ app.post('/customers', function (req, res) {
 app.put('/customers/:id', function (req, res) {
     let customer = req.body;
     var custId = req.params.id;
-
+    console.log('deleting customer id '+ custId );
     let docRef = db.collection('customers').doc(custId);
     docRef.update(customer).then( () => {
         console.log('Document updated.');
@@ -77,7 +77,7 @@ app.get('/customers', function (req, res) {
             //add each doc in the array
             docs.push(doc.data());
         });
-        console.log(docs.length);
+        console.log('docs.length='+docs.length);
         res.status(200).json(docs).end();
 
     }).catch(function (err) {
@@ -105,9 +105,32 @@ app.get('/customers/:id', function (req, res) {
 });
 
 
+//to delete customer  by id 
+app.delete('/customers/:id',function(req,res){
+var id = req.params.id;
+console.log('id='+id);
+let docRef=db.collection('customers').doc(id);
+docRef.get().then( (doc)=> {
+    if (!doc.exists) {
+        console.log("customer not found");
+        res.status(404).send("Customer not found.").end();
+    }else{
+        docRef.delete();
+        console.log("customer deleted");
+        res.status(204).send("deleted succesfully").end();
+    }
+}).catch(function (err) {
+    console.error(err);
+    res.status(500).end();            
+});
+
+});
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log('App listening on port ' + PORT);
 });
 
+
+module.exports = app;
 
